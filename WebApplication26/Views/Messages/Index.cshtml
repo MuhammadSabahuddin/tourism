@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication26.Models.Message>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MessengerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageDateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnknownStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member.MemberUsername)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessengerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageDateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnknownStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member.MemberUsername)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MemberId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MemberId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MemberId })
+        </td>
+    </tr>
+}
+
+</table>

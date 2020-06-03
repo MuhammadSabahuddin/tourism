@@ -1,0 +1,67 @@
+﻿@model WebApplication26.Models.Message
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Message</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MessengerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessengerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnknownStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnknownStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Member.MemberUsername)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Member.MemberUsername)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MemberId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
